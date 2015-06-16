@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Cadastro De Clientes</title>
+        <script type="text/javascript">
+            function validaCampo() {
+                if (document.cadastro.nome.value == "") {
+                    alert("O Campo nome é obrigatório!");
+                    return false;
+                } else if (document.cadastro.email.value == "") {
+                    alert("O Campo email é obrigatório!");
+                    return false;
+                } else if (document.cadastro.endereco.value == "") {
+                    alert("O Campo endereço é obrigatório!");
+                    return false;
+                } else if (document.cadastro.cidade.value == "") {
+                    alert("O Campo Cidade é obrigatório!");
+                    return false;
+                } else if (document.cadastro.estado.value == "") {
+                    alert("O Campo Estado é obrigatório!");
+                    return false;
+                } else if (document.cadastro.bairro.value == "") {
+                    alert("O Campo Bairro é obrigatório!");
+                    return false;
+                }else if (document.cadastro.pais.value == ""){
+                    alert("O Campo país é obrigatório!");
+                    return false;
+                }else if (document.cadastro.login.value == ""){
+                    alert("O Campo Login é obrigatório!");
+                    return false;
+                }else if (document.cadastro.senha.value == ""){
+                    alert("Digite uma senha!");
+                    return false;
+                }else return true;
+            }
+        </script>
+    </head>     
+    <body>
+        <form id="cadastro" name="cadastro" method="post" onsubmit="return validaCampo(); return false;">
+            <table width="625" border="0">
+                <tr>
+                    <td width="69">
+                        <label class="labelform1" id="labelNome" for="nome">Nome:</label>                        
+                    </td>
+                    <td width="546">
+                        <input name="nome" type="text" id="nome" size="70" maxlength="60" />
+                    <span>*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="labelform1" id="labelEmail" for="email">Email:</label>                        
+                    </td>
+                    <td>
+                        <input name="email" type="text" id="email" size="70" maxlength="60" />
+                    <span>*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="labelform1" id="labelSexo" for="sexo">Sexo:</label>                        
+                    </td>
+                    <td>
+                        <input name="sexo" type="radio" value="Masculino" checked="checked" />
+                        <label class="labelform1" id="labelMasculino" for="sexo">Masculino</label>                        
+                        <input name="sexo" type="radio" value="Feminino" />
+                        <label class="labelform1" id="labelMasculino" for="sexo">Feminino</label>
+                        <span>*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="labelform1" id="labelDDD" for="ddd">DDD:</label>
+                    </td>
+                    <td>
+                        <input name="ddd" type="text" id="ddd" size="4" maxlength="2"/>
+                        <label class="labelform1" id="labelTelefone" for="telefone">Telefone:</label>                        
+                        <input name="telefone" type="text" id="telefone" />
+                        <span>Apenas números</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="labelform1" id="labelEndereco" for="endereco">Endereço:</label>
+                    </td>
+                    <td>
+                        <input name="endereco" type="text" id="endereco" size="70" maxlength="70" />
+                        <span>*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="labelform1" id="labelCidade" for="cidade">Cidade:</label>
+                    </td>
+                    <td>
+                        <input name="cidade" type="text" id="cidade" maxlength="20" />
+                        <span>*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="labelform1" id="labelEstado" for="estado">Estado:</label>
+                    </td>
+                    <td>
+                        <select name="estado" id="estado">
+                            <option>Selecione...</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="ES">ES</option>
+                            <option value="DF">DF</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                        </select>
+                        <span>*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="labelform1" id="labelBairro" for="bairro">Bairro:</label>
+                    </td>
+                    <td>
+                        <input name="bairro" type="text" id="bairro" maxlength="20" />
+                        <span>*</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="labelform1" id="labelPais" for="pais">País:</label>
+                    </td>
+                    <td>
+                        <input name="pais" type="text" id="pais" maxlength="20"/>
+                        <span>*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="labelform1" id="labelLogin" for="login">Login:</label>                        
+                    </td>
+                    <td>
+                        <input name="login" type="text" id="login" maxlength="12"/>
+                        <span>*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="labelform1" id="labelSenha" for="senha">Senha:</label>
+                    </td>
+                    <td>
+                        <input name="senha" type="password" id="senha" maxlength="12" />
+                        <span>*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>
+                            <input name="cadastrar" type="submit" id="cadastrar" value="Concluir meu Cadastro!" />
+                            <input name="limpar" type="reset" id="limpar" value="Limpar Campos preenchidos!" />
+                            <span>* Campos com * são obrigatórios!</span>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
