@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="bootstrap.min.css" rel="stylesheet">
-        <link href="C" rel="stylesheet">
+        <link href="CadastroEmpresacss.css" rel="stylesheet">
         <title>Empresa</title
     </head>
     <body>
@@ -32,6 +32,8 @@
             </ul>
         </div>
     </nav>
+        <form class="form-horizontal" role="form"/>
         <h1>TESTE</h1>
+        </form>
     </body>
 </html>
