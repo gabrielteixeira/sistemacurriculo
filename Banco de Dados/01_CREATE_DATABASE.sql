@@ -15,7 +15,7 @@ START TRANSACTION;
 delimiter $$
 
 CREATE DATABASE `sistemacurriculo` /*!40100 DEFAULT CHARACTER SET latin1 */$$
-
+use sistemacurriculo;
 SET FOREIGN_KEY_CHECKS=0;
 
 CREATE TABLE CURRICULO (
