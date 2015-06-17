@@ -26,6 +26,9 @@
                 <li role="presentation">
                     <a href="ListaClientejsp.jsp">Lista</a>
                 </li>
+                <li role="presentation" >
+                    <a href="CadastroEmpresajsp.jsp">Empresa</a>
+                </li>
             </ul>
         </div>
     </nav>
