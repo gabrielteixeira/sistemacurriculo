@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Rafael
  */
-@WebServlet(name = "EmpresaServlet", urlPatterns = {"/EmpresaServlet"})
+@WebServlet(name = "EmpresaServlet", urlPatterns = {"/CadastroEmpresajsp"})
 public class EmpresaServlet extends HttpServlet {
 
     /**
@@ -34,7 +34,8 @@ public class EmpresaServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Empresa empresa = new Empresa(
                 request.getParameter("nome"),
-                request.getParameter("cnpj"));
+                request.getParameter("cnpj"),
+                request.getParameter("vagas"));
         EmpresaDAO empresaDAO = new EmpresaDAO();        
         if (empresaDAO.cadastrarCliente(empresa)) {
             response.sendRedirect("CadastroSucessojsp.jsp");

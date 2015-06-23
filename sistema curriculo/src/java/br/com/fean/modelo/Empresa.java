@@ -11,23 +11,25 @@ package br.com.fean.modelo;
  */
 public class Empresa {
     
-    private String nome;
+    private String nomeEmpresa;
     private String cnpj;
+    private String vagas;
 
     public Empresa() {
     }
 
-    public Empresa(String nome, String cnpj) {
-        this.nome = nome;
+    public Empresa(String nomeEmpresa, String cnpj, String vagas) {
+        this.nomeEmpresa = nomeEmpresa;
         this.cnpj = cnpj;
+        this.vagas = vagas;
     }
 
     public void setCNPJ(String cnpj) {
         this.cnpj = cnpj;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String nomeEmpresa) {
+        this.nomeEmpresa = nomeEmpresa;
     }
     
     public String getCNPJ() {
@@ -35,7 +37,14 @@ public class Empresa {
     }
 
     public String getNome() {
-        return nome;
+        return nomeEmpresa;
     }         
-    
+
+    public void setVagas(String vagas) {
+        this.vagas = vagas;
+    }
+
+    public String getVagas() {
+        return vagas;
+    }
 }
