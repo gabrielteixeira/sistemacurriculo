@@ -14,29 +14,11 @@
         <title>Cadastro de Empresa</title>
         <script type="text/javascript">
         function validaCampo() {
-            if (document.cadastro.nome.value == "") {
-                alert("O Campo nome é obrigatório!");
+            if (document.cadastroEmpresa.NM_EMPRESA.value == "") {
+                alert("O Campo empresa é obrigatório!");
                 return false;
-            } else if (document.cadastro.email.value == "") {
-                alert("O Campo email é obrigatório!");
-                return false;
-            } else if (document.cadastro.sexo.value == "") {
-                alert("O Campo endereço é obrigatório!");
-                return false;
-            } else if (document.cadastro.endereco.value == "") {
-                alert("O Campo endereço é obrigatório!");
-                return false;
-            } else if (document.cadastro.cidade.value == "") {
-                alert("O Campo Cidade é obrigatório!");
-                return false;
-            } else if (document.cadastro.estado.value == "") {
-                alert("O Campo Estado é obrigatório!");
-                return false;
-            } else if (document.cadastro.bairro.value == "") {
-                alert("O Campo Bairro é obrigatório!");
-                return false;
-            } else if (document.cadastro.pais.value == "") {
-                alert("O Campo país é obrigatório!");
+            } else if (document.cadastroEmpresa.I_CNPJ.value == "") {
+                alert("O Campo cnpj é obrigatório!");
                 return false;
             } else
                 return true;
@@ -44,29 +26,11 @@
     </script>
     </head>
     <body>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
-        <div class="container-fluid "> 
-            <ul class="nav nav-pills"> 
-                <li role="presentation" >
-                    <a href="HomeClientejsp.jsp">Home</a>
-                </li> 
-                <li role="presentation" >
-                    <a href="Clientejsp.jsp">Cadastrar</a>
-                </li>
-                <li role="presentation">
-                    <a href="ListaClientejsp.jsp">Lista</a>
-                </li>
-                <li role="presentation" >
-                    <a href="CadastroEmpresajsp.jsp">Empresa</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
         <form class="form-horizontal" role="form" name="cadastroEmpresa" action="CadastroEmpresajsp" method="POST" onsubmit="return validaCampo(); return false;">
         <div class="form-group"> 
             <label class="col-sm-2 control-label" id="labelNome" for="nome">Empresa*:</label>
             <div class="col-sm-10">
-                <input name="nomeEmpresa" class="form-control" type="text" id="nomeEmpresa" size="70" maxlength="60" placeholder="Nome da Empresa"/>
+                <input name="NM_EMPRESA" class="form-control" type="text" id="NM_EMPRESA" size="70" maxlength="60" placeholder="Nome da Empresa"/>
             </div>
         </div>
         <div class="form-group"> 
@@ -75,10 +39,11 @@
                 <input name="cnpj" class="form-control" type="text" id="cnpj" size="70" maxlength="60" placeholder="CNPJ da Empresa"/>
             </div>
         </div>
-        <div class="form-group"> 
-            <label class="col-sm-2 control-label" id="labelNome" for="nome">Vagas*:</label>
-            <div class="col-sm-10">
-                <input name="vagas" class="form-control" type="text" id="vagas" size="70" maxlength="60" placeholder="Numero de vagas"/>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input name="cadastrarEmpresa" type="submit" id="cadastrarEmpresa" value="Concluir meu Cadastro!" class="btn btn-primary" />
+                <input name="limparCadastroEmpresa" type="reset" id="limparCadastroEmpresa" value="Limpar Campos preenchidos!" class="btn btn-primary" />
+                <p>Campos com * sao obrigatorios</p>
             </div>
         </div>
         </form>

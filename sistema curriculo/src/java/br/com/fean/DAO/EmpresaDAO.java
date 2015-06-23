@@ -17,12 +17,12 @@ import java.util.List;
  */
 public class EmpresaDAO {
     
-        public boolean cadastrarCliente(Empresa empresa){
+        public boolean cadastrarEmpresa(Empresa empresa){
         boolean retorno = false;
         Conexao conn = new Conexao();
         try {
             Statement stmt = (Statement) conn.getConn().createStatement();
-            stmt.execute("INSERT INTO empresa (NM_EMPRESA,I_CNPJ) VALUES ('"+empresa.getNome()+"','"+empresa.getCNPJ()+"')");
+            stmt.execute("INSERT INTO empresa (NM_EMPRESA,I_CNPJ) VALUES ('"+empresa.getNM_EMPRESA()+"','"+empresa.getI_CNPJ()+"')");
             retorno = true;
         } catch (Exception e) {
             e.printStackTrace();

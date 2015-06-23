@@ -33,11 +33,10 @@ public class EmpresaServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Empresa empresa = new Empresa(
-                request.getParameter("nome"),
-                request.getParameter("cnpj"),
-                request.getParameter("vagas"));
+                request.getParameter("NM_EMPRESA"),
+                request.getParameter("I_CNPJ"));
         EmpresaDAO empresaDAO = new EmpresaDAO();        
-        if (empresaDAO.cadastrarCliente(empresa)) {
+        if (empresaDAO.cadastrarEmpresa(empresa)) {
             response.sendRedirect("CadastroSucessojsp.jsp");
         } else {
             response.sendRedirect("CadastroFalhajsp.jsp");

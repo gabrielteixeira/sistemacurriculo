@@ -11,40 +11,30 @@ package br.com.fean.modelo;
  */
 public class Empresa {
     
-    private String nomeEmpresa;
-    private String cnpj;
-    private String vagas;
+    private String NM_EMPRESA;
+    private String I_CNPJ;
 
     public Empresa() {
     }
 
-    public Empresa(String nomeEmpresa, String cnpj, String vagas) {
-        this.nomeEmpresa = nomeEmpresa;
-        this.cnpj = cnpj;
-        this.vagas = vagas;
+    public Empresa(String NM_EMPRESA, String I_CNPJ) {
+        this.NM_EMPRESA = NM_EMPRESA;
+        this.I_CNPJ = I_CNPJ;
     }
 
-    public void setCNPJ(String cnpj) {
-        this.cnpj = cnpj;
+    public void setI_CNPJ(String I_CNPJ) {
+        this.I_CNPJ = I_CNPJ;
     }
 
-    public void setNome(String nomeEmpresa) {
-        this.nomeEmpresa = nomeEmpresa;
+    public void setNM_EMPRESA(String NM_EMPRESA) {
+        this.NM_EMPRESA = NM_EMPRESA;
     }
     
-    public String getCNPJ() {
-        return cnpj;
+    public String getI_CNPJ() {
+        return I_CNPJ;
     }
 
-    public String getNome() {
-        return nomeEmpresa;
+    public String getNM_EMPRESA() {
+        return NM_EMPRESA;
     }         
-
-    public void setVagas(String vagas) {
-        this.vagas = vagas;
-    }
-
-    public String getVagas() {
-        return vagas;
-    }
 }
