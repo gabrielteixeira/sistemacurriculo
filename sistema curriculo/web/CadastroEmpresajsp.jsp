@@ -13,17 +13,17 @@
         <link href="CadastroEmpresacss.css" rel="stylesheet">
         <title>Cadastro de Empresa</title>
         <script type="text/javascript">
-        function validaCampo() {
-            if (document.cadastroEmpresa.NM_EMPRESA.value == "") {
-                alert("O Campo empresa é obrigatório!");
-                return false;
-            } else if (document.cadastroEmpresa.I_CNPJ.value == "") {
-                alert("O Campo cnpj é obrigatório!");
-                return false;
-            } else
-                return true;
-        }
-    </script>
+            function validaCampo() {
+                if (document.cadastroEmpresa.NM_EMPRESA.value === "") {
+                    alert("O campo Cmpresa é obrigatório!");
+                    return false;
+                } else if (document.cadastroEmpresa.I_CNPJ.value === "") {
+                    alert("O campo CNPJ é obrigatório!");
+                    return false;
+                } else
+                    return true;
+            }
+        </script>
     </head>
     <body>
         <form class="form-horizontal" role="form" name="cadastroEmpresa" action="CadastroEmpresajsp" method="POST" onsubmit="return validaCampo(); return false;">
