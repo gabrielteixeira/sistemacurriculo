@@ -36,7 +36,7 @@
         <div class="form-group"> 
             <label class="col-sm-2 control-label" id="labelNome" for="nome">CNPJ*:</label>
             <div class="col-sm-10">
-                <input name="cnpj" class="form-control" type="text" id="cnpj" size="70" maxlength="60" placeholder="CNPJ da Empresa"/>
+                <input name="I_CNPJ" class="form-control" type="text" id="I_CNPJ" size="70" maxlength="60" placeholder="CNPJ da Empresa"/>
             </div>
         </div>
         <div class="form-group">

@@ -16,29 +16,29 @@ import java.util.List;
  * @author Rafael
  */
 public class UsuarioDAO {
-    
-    public boolean cadastrarUsuario(Usuario usuario){
+
+    public boolean cadastrarUsuario(Usuario usuario) {
         boolean retorno = false;
         Conexao conn = new Conexao();
         try {
             Statement stmt = (Statement) conn.getConn().createStatement();
-            stmt.execute("INSERT INTO usuario (nome,login,senha,perfil) VALUES ('"+usuario.getNome()+"','"+usuario.getLogin()+"','"+usuario.getSenha()+"','"+usuario.getPerfil()+"')");
+            stmt.execute("INSERT INTO usuario (nome,login,senha,perfil) VALUES ('" + usuario.getNome() + "','" + usuario.getLogin() + "','" + usuario.getSenha() + "','" + usuario.getPerfil() + "')");
             retorno = true;
         } catch (Exception e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             conn.fecharConexao();
         }
         return retorno;
-    }   
-    
-    public List<Usuario> listaUsuario(){
+    }
+
+    public List<Usuario> listaUsuario() {
         List<Usuario> usuarios = new ArrayList<Usuario>();
         Conexao conn = new Conexao();
         try {
             Statement stmt = (Statement) conn.getConn().createStatement();
             ResultSet rs = stmt.executeQuery("Select * from cliente");
-            while(rs.next()){
+            while (rs.next()) {
                 Usuario usuario = new Usuario(
                         rs.getString("nome"),
                         rs.getString("login"),
@@ -48,22 +48,49 @@ public class UsuarioDAO {
             }
         } catch (Exception e) {
             e.printStackTrace();
-        } finally{
+        } finally {
             conn.fecharConexao();
         }
-        
+
         return usuarios;
     }
-    
-    public void deleteUsuario(String nomeUsuario){
+
+    public boolean validarLogin(String login, String senha) {
+        boolean retorno = false;
+        List<Usuario> usuarios = new ArrayList<Usuario>();
         Conexao conn = new Conexao();
         try {
             Statement stmt = (Statement) conn.getConn().createStatement();
-            stmt.execute("DELETE FROM usuario where nome = '"+nomeUsuario+"'");
+            ResultSet rs = stmt.executeQuery("Select * from usuario");
+            while (rs.next()) {
+                Usuario usuario = new Usuario(
+                        rs.getString("nome"),
+                        rs.getString("login"),
+                        rs.getString("senha"),
+                        rs.getString("perfil"));
+                
+                if (rs.getString("login").equals(login) && rs.getString("senha").equals(senha)) {
+                    retorno = true;
+                }
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             conn.fecharConexao();
-        }        
+        }
+        return retorno;
+    }
+
+    public void deleteUsuario(String nomeUsuario) {
+        Conexao conn = new Conexao();
+        try {
+            Statement stmt = (Statement) conn.getConn().createStatement();
+            stmt.execute("DELETE FROM usuario where nome = '" + nomeUsuario + "'");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            conn.fecharConexao();
+        }
     }
 }

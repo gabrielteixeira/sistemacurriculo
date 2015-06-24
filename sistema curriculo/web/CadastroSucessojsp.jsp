@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="bootstrap.min.css" rel="stylesheet">
-        <title>Clienteo cadastrado</title>
+        <title>Usuário cadastrado</title>
     </head>
     <script>
         function redirect() {
@@ -18,7 +18,7 @@
         }        
     </script>
     <body>
-        <h1>Cliente cadastrado com sucesso</h1>
+        <h1>Cadastro realizado com sucesso.</h1>
         <button onclick="redirect()" type="button" class="btn btn-primary">Voltar</button>
     </body>
 </html>

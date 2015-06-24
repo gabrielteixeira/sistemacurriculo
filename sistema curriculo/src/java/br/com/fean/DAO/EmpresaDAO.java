@@ -22,6 +22,7 @@ public class EmpresaDAO {
         Conexao conn = new Conexao();
         try {
             Statement stmt = (Statement) conn.getConn().createStatement();
+            //stmt.execute("INSERT INTO empresa (NM_EMPRESA,I_CNPJ) VALUES ('"+empresa.getNM_EMPRESA()+"','"+empresa.getI_CNPJ()+"')");
             stmt.execute("INSERT INTO empresa (NM_EMPRESA,I_CNPJ) VALUES ('"+empresa.getNM_EMPRESA()+"','"+empresa.getI_CNPJ()+"')");
             retorno = true;
         } catch (Exception e) {

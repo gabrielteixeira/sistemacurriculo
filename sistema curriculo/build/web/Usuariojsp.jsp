@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="bootstrap.min.css" rel="stylesheet">
     <link href="Clientecss.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <title>Cadastro De Usuários</title>
     <script type="text/javascript">
         function validaCampo() {
@@ -21,11 +22,11 @@
             } else if (document.cadastro.login.value == "") {
                 alert("O Campo email é obrigatório!");
                 return false;
-            } 
+            }
             else if (document.cadastro.senha.value != document.cadastro.ConfirmaSenha.value) {
                 alert("Senhas não coincidem.");
                 return false;
-            }else if (document.cadastro.senha.value == "") {
+            } else if (document.cadastro.senha.value == "") {
                 alert("O Campo endereço é obrigatório!");
                 return false;
             } else if (document.cadastro.perfil.value == "") {
@@ -43,6 +44,9 @@
                 <li role="presentation" >
                     <a href="Loginjsp.jsp">Home</a>
                 </li> 
+                <li role="presentation" >
+                    <a class="paginaAtual">Cadastrar</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -77,9 +81,8 @@
             <div class="col-sm-10">
                 <select name="perfil" class="form-control" id="perfil">
                     <option>Selecione...</option>
-                    <option value="1">Empregador</option>
-                    <option value="2">Empregado</option>
-                    <option value="3">Administrador</option>
+                    <option value="1">Empresa</option>
+                    <option value="2">Usuário</option>
                 </select>
             </div>
         </div>
