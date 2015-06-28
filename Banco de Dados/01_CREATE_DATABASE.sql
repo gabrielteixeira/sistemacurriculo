@@ -1,28 +1,14 @@
-/* CADASTRO CURRICULO
--> Nome
--> CPF
--> RG
--> Endereco
--> Email
--> Nivel Escolaridade
--> Especializacoes
--> Lista de ultimos empregos
--> Motivo para demissao da ultima empresa
--> Como descobriu o cadastro de curriculum
-Caso seja feminino, se tem filhos e se deseja ter filhos
-*/
-START TRANSACTION;
-delimiter $$
+CREATE DATABASE SISTEMACURRICULO;
 
-CREATE DATABASE `sistemacurriculo` /*!40100 DEFAULT CHARACTER SET latin1 */$$
-use sistemacurriculo;
+USE SISTEMACURRICULO;
+
 SET FOREIGN_KEY_CHECKS=0;
 
 CREATE TABLE CURRICULO (
 	ID_CURRICULO 				INT NOT NULL AUTO_INCREMENT,
 	NM_NOME 					VARCHAR(100),
-	I_CPF 					    INT,
-	I_RG      					INT,
+	S_CPF 					    INT,
+	S_RG      					INT,
 	NM_LOGRADOURO 				VARCHAR(100),
 	NM_EMAIL      				VARCHAR(100),
 	ID_NIVEL_ESCOLARIDADE       INT,
@@ -53,6 +39,7 @@ CREATE TABLE EMPREGO (
 	ID_EMPREGO INT  NOT NULL AUTO_INCREMENT,
 	ID_CURRICULO INT,
 	NM_EMPRESA VARCHAR(50),
+	NM_CARGO   VARCHAR(50),
 	NM_DESCRICAO VARCHAR(500),
 	DT_ENTRADA   DATE,
 	DT_SAIDA     DATE,
@@ -67,5 +54,6 @@ CREATE TABLE ESCOLARIDADE (
 	PRIMARY KEY PK_ESCO_ID_ESC (ID_ESCOLARIDADE)
 );
 
-SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
+
+SET FOREIGN_KEY_CHECKS=1;
