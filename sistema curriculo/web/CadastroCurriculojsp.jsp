@@ -25,10 +25,7 @@
             <ul class="nav nav-pills"> 
                 <a class="perfil">Usuário</a>
                 <li role="presentation" >
-                    <a href="BuscarVagasjsp.jsp">Buscar Vagas</a>
-                </li> 
-                <li role="presentation" >
-                    <a class="paginaAtual">Currículo</a>
+                    <a class="paginaAtual">Cadastrar Currículo</a>
                 </li>
                 <li role="presentation">
                     <a href="Loginjsp.jsp">Sair</a>
@@ -70,11 +67,9 @@
                 <select name="ID_NIVEL_ESCOLARIDADE" class="form-control" id="ID_NIVEL_ESCOLARIDADE">
                     <option>Selecione...</option>
                     <%
-                        String teste = "Rodolpho";
+                        String teste = "Nivel Médio (2º grau)";
                     %>
                     <option><%=teste%></option>
-                    <option >27</option>
-                    <option>Nivel Medio (2º grau)</option>
                     <option>Superior</option>
                     <option>Pós-graduação</option>
                     <option>Mestrado</option>

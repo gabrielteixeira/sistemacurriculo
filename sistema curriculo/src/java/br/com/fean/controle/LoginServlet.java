@@ -33,14 +33,21 @@ public class LoginServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        UsuarioDAO usuarioDAO = new UsuarioDAO();        
-        if (usuarioDAO.validarLogin(request.getParameter("login"), request.getParameter("senha"))){
-            response.sendRedirect("CadastroSucessojsp.jsp");
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        if (usuarioDAO.validarLogin(request.getParameter("login"), request.getParameter("senha")) == 1) {
+            response.sendRedirect("ListaCurriculojsp.jsp");
+        } else if (usuarioDAO.validarLogin(request.getParameter("login"), request.getParameter("senha")) == 2) {
+            response.sendRedirect("CadastroCurriculojsp.jsp");
+        }
+        else if (usuarioDAO.validarLogin(request.getParameter("login"), request.getParameter("senha")) == 3) {
+            response.sendRedirect("CadastroEmpresajsp.jsp");
         } else {
             response.sendRedirect("CadastroFalhajsp.jsp");
         }
     }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+
     /**
      * Handles the HTTP <code>GET</code> method.
      *
